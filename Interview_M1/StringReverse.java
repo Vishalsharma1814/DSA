@@ -1,19 +1,17 @@
 package Interview_M1;
 
-// Write a Java Program to reverse a string without using String inbuilt function.
 public class StringReverse {
 
-    public static void main(String[] args) {
-        String str = "Hello, World!";
-
-        int i = 0;
-        int j = str.length() - 1;
-        while(i < j){
-            str = str.substring(0,i) + str.charAt(j) + str.substring(i+1,j) + str.charAt(i) + str.substring(j+1);
-            i++;
-            j--;
-
+    public static String reverseString(String str){
+        StringBuilder sb = new StringBuilder(str);
+        for(int i =0; i < sb.length()/2; i++){
+            char temp = sb.charAt(i);
+            sb.setCharAt(i, sb.charAt(sb.length()-1-i));
+            sb.setCharAt(sb.length()-1-i, temp);
         }
-        System.out.println(str);
+        return sb.toString();
+    }
+    public static void main(String[] args) {
+        System.out.println(reverseString("hello"));
     }
 }
