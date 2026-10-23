@@ -18,7 +18,7 @@ public class IterateArrayList {
             System.out.println(list.get(index));
         }
 
-        Iterator<String> lisIterator = list.iterator();\ 
+        Iterator<String> lisIterator = list.iterator();
 
         while (lisIterator.hasNext()) {
             System.out.println(lisIterator.next());
